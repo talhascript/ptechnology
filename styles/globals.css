@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TEAM PAGE */
-
-  /* TEAM PAGE */
-
+/* MODAL BLUR EFFECT */
+.backdrop-blur {
+  backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+}
+  /*MODAL BLUR EFFECT */

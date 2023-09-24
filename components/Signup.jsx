@@ -176,16 +176,20 @@ export default function Signup() {
 
       {/* Success Modal */}
       {success && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white p-5 rounded-lg shadow-lg">
-            <p className="text-xl font-semibold mb-3">User Created</p>
-            <p>Your account has been successfully created.</p>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 mt-3 rounded-md"
-              onClick={closeSuccessModal}
-            >
-              OK
-            </button>
+        <div className="fixed inset-0 flex items-center align-middle justify-center z-50 backdrop-blur">
+          <div className="p-5 bg-white rounded-lg shadow-xl border-2 border-cyan-600">
+            <p className=" flex justify-center text-xl font-semibold mb-3">
+              User Successfully Created
+            </p>
+            <p>You can now log into your account.</p>
+            <div className="flex justify-center">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 mt-3 rounded-md transform hover:scale-105 transition-transform"
+                onClick={closeSuccessModal}
+              >
+                OK
+              </button>
+            </div>
           </div>
         </div>
       )}
