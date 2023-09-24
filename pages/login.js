@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
 
-
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
   const controls = useAnimation();
