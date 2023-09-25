@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
   const router = useRouter(); // Initialize the router object
 
   // Check if the current route is '/login' or '/signup'
-  const isLoginPage = router.pathname === '/login' || router.pathname === '/signup';
+  const isLoginPage = router.pathname === '/login' || router.pathname === '/signup' || router.pathname === '/forgotpass';
 
   return (
     <>
