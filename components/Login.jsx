@@ -73,7 +73,7 @@ export default function Login() {
                 />
               </div>
             </div>
-            
+
             <div>
               <label
                 htmlFor="password"
@@ -110,13 +110,17 @@ export default function Login() {
               </div>
 
               <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-semibold text-blue-500 hover:text-blue-600"
-                >
-                  Forgot password?
-                </a>
+
+
+                <Link href="/forgotpass">
+                  <button className="font-semibold text-blue-500 hover:text-blue-600">
+                   Forgot Password
+                  </button>
+                </Link>
+
+
               </div>
+
             </div>
 
             {error && <div className="text-red-500 text-sm">{error}</div>}
