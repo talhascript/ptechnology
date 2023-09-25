@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Team from '@/components/Team';
+import ShareHolders from '@/components/ShareHolders';
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <Team />
+        <ShareHolders />
       </motion.div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { BackgroundPattern, BackgroundShapeTop, BackgroundShapeBottom } from "@/components/BackgroundShape"
+import { BackgroundPattern, BackgroundShapeTop } from "@/components/BackgroundShape"
 
 const people = [
     {
@@ -8,27 +8,22 @@ const people = [
         'images/Sibly_Noman.jpg',
     },
     {
-      name: 'Md Shakhawat Hossen',
-      role: '',
+      name: 'Cat',
+      role: 'Co-Founder / CEO',
       imageUrl:
-        '',
+        'images/cat.jpg',
     },
     {
       name: 'Abu Talha',
-      role: 'Software Team',
+      role: 'Softare Team',
       imageUrl:
         'images/Abu_Talha.jpg',
     },
     {
-      name: 'Nafis Ashraf',
-      role: 'Software Team',
+      name: 'Leslie Alexander',
+      role: 'Data Analyst',
       imageUrl:
-        'images/Nafis_Ashraf.jpg',
-    },
-    {
-      name: 'Michael Scott',
-      role: 'Regional Manager',
-      imageUrl: 'images/Michael Scott.jpg',
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     },
     {
       name: 'Dwight Schrute',
@@ -38,15 +33,14 @@ const people = [
     },
   ]
   
-  export default function Team() {
+  export default function ShareHolders() {
     return (
       <>
+      <hr />
       <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
-      <BackgroundShapeTop />
-      {/* <BackgroundShapeBottom /> */}
         <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Shareholders</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper
               suspendisse.
