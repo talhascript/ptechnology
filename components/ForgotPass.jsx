@@ -41,7 +41,7 @@ export default function ForgotPass() {
                     >
                         <h1 className="text-2xl font-bold text-center text-primary mb-4">Password Reset</h1>
                         <p className="text-gray-600 text-center mb-6">
-                            Enter the email address that you logged in with, and we'll send you an email with instructions to reset your password.
+                            Enter the email address that you logged in with, and we will send you an email with instructions to reset your password.
                         </p>
                         <div className="mb-4">
                             <label htmlFor="typeEmail" className="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
