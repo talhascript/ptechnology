@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { Dialog } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Popover, Transition } from "@headlessui/react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -9,6 +11,11 @@ const navigation = [
   { name: "Services", href: "/services" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact Us", href: "/contact" },
+];
+
+const dropdownItems = [
+  { name: "CAD design", href: "/cad-design" },
+  { name: "Digital Fabrication", href: "/digital-fabrication" },
 ];
 
 export default function Navbar() {
@@ -44,15 +51,67 @@ export default function Navbar() {
 
           {/* lg screen visible navigation items */}
           <div className="hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-md p-3 font-semibold leading-6 text-gray-900 hover:text-indigo-600 hover:shadow-lg hover:rounded-lg transform hover:-translate-y-1 transition-transform duration-300"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              // Use a conditional rendering approach here
+              item.name === "Services" ? (
+                // Render a Popover for the "Services" item
+                <Popover key={item.name} className="relative">
+                  {({ open }) => (
+                    <>
+                      <Popover.Button
+                        className={`
+                ${open ? "" : "text-opacity-90"}
+                text-md p-3 font-semibold leading-6 text-gray-900 hover:text-indigo-600 hover:shadow-lg hover:rounded-lg transform hover:-translate-y-1 transition-transform duration-300
+              `}
+                      >
+                        <div className="flex items-end">
+                          <span>{item.name}</span>
+                          <ChevronDownIcon
+                            className={`${open ? "" : "text-opacity-70"}
+                  ml-1 h-5 w-5 text-black-300 transition duration-150 ease-in-out `}
+                            aria-hidden="true"
+                          />
+                        </div>
+                        {/* {item.name} */}
+                      </Popover.Button>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1"
+                      >
+                        <Popover.Panel className="absolute z-10 mt-2 w-48 bg-white rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                          <div className="py-2">
+                            {/* Dropdown menu items for "Services" */}
+                            {dropdownItems.map((dropdownItem) => (
+                              <Link
+                                key={dropdownItem.name}
+                                href={dropdownItem.href}
+                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50"
+                              >
+                                {dropdownItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </Popover.Panel>
+                      </Transition>
+                    </>
+                  )}
+                </Popover>
+              ) : (
+                // Render a normal link for other navigation items
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-md p-3 font-semibold leading-6 text-gray-900 hover:text-indigo-600 hover:shadow-lg hover:rounded-lg transform hover:-translate-y-1 transition-transform duration-300"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Login Signup */}
