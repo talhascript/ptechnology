@@ -64,6 +64,7 @@ export default function Navbar() {
               item.name === "Services" ? (
                 // Render a Popover for the "Services" item
                 <div
+                  key={item.name}
                   className="relative"
                   onMouseLeave={() => setIsPopoverOpen(false)}
                 >
