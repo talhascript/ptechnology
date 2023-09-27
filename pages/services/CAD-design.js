@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import ContentSection from '@/components/ContentSection';
-
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import CADdesign from "@/components/CADdesign";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -10,7 +9,7 @@ export default function Home() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoaded(true);
-      controls.start({ filter: 'blur(0)' }); // Remove blur
+      controls.start({ filter: "blur(0)" }); // Remove blur
     }, 1000); // Adjust the delay as needed
 
     return () => clearTimeout(timeout);
@@ -19,12 +18,12 @@ export default function Home() {
   return (
     <div className="content-section-container">
       <motion.div
-        className={`content-section ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`content-section ${loaded ? "opacity-100" : "opacity-0"}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <ContentSection />
+        <CADdesign />
       </motion.div>
     </div>
   );
